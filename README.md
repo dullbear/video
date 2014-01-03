@@ -16,7 +16,7 @@ html引用
 
 ```
 bdUI.dullVideo.defaults = {
-		video: '#video',
+		video: '#video', //获取视频
 		fullScreen: '#fullScreen', //全屏按钮
 		videoCont: '#videoCont', //视频区域
 		stop: '#stop', //停止、播放按钮
