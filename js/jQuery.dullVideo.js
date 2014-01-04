@@ -120,16 +120,13 @@
 			this.keyEvt();
 			this.audio();
 			this.playBar();
-
-
-
 		},
 		/**
 		 * 点击事件
 		 */
-	
 
-		event: function() {			
+
+		event: function() {
 
 			var _self = this;
 
@@ -223,11 +220,14 @@
 					_self.$playProg.css('width', currentWid);
 					_self.$currentTime.html(_self.timeFormat(currtent));
 
-					//播放完成
-					if (currtent == _self.alltime) {
-						clearInterval(time);
-						_self.callback('end');
-					};
+					setTimeout(function() {
+						//播放完成
+						if (currtent >= _self.alltime) {
+							clearInterval(time);
+							_self.callback('end');
+						}
+					}, 100);
+
 				}, 1000);
 
 				//缓冲
